@@ -13,7 +13,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * helper - function that finds square root
+ * findsqrt - function that finds square root
  * @x: integer
  * @y: integer to test for square root
  * Return: return x compared to y
