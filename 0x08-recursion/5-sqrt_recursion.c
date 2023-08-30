@@ -25,5 +25,5 @@ int findsqrt(int x, int y)
 	else if (x * x > y)
 		return (-1);
 	else
-		return (helper(x += 1, y));
+		return (findsqrt(x += 1, y));
 }
