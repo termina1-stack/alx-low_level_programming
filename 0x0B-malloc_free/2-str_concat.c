@@ -1,52 +1,30 @@
 #include "main.h"
 
 /**
- * get_len - function that counts length of the string
- * @str: the string
- * Return: length of the string
- */
-int get_len(char *str)
-{
-	int l;
-
-	for (l = 0; str[l] != '\0'; l++)
-		continue;
-
-	return (l);
-}
-
-/**
- * str_concat - function that concatenates two strings
- * @s1: string
- * @s2: string
- * Return: pointer to concatenated string, followed by null
- */
+  * str_concat - function that concatenates two strings
+  * @s1: string 1
+  * @s2: string 2
+  * Return: a pointer to the newly allocated space in memory
+  * containing the concatenated strings.
+  */
 char *str_concat(char *s1, char *s2)
 {
-	char *join;
-	int i, j, len1, len2;
+	int index, concat_index = 0, len = 0;
+	char *join_str;
 
 	if (s1 == NULL)
 		s1 = "";
-	else
-		len1 = get_len(s1);
-
 	if (s2 == NULL)
 		s2 = "";
-	else
-		len2 = get_len(s2);
+	for (index = 0; s1[index] || s2[index]; index++)
+		len++;
+	join_str = malloc(sizeof(char) * len);
 
-	join = (char *)malloc((len1 * sizeof(char)) + (len2 * sizeof(char)) + 1);
-
-	if (join == NULL)
+	if (join_str == NULL)
 		return (NULL);
-
-	for (i = 0; s1[i] != '\0'; i++)
-		join[i] = s1[i];
-
-	for (j = 0; s2[j] != '\0'; j++)
-		join[i + j] = s2[j];
-
-	join[i + j] = '\0';
-	return (join);
+	for (index = 0; s1[index]; index++)
+		join_str[concat_index++] = s1[index];
+	for (index = 0; s2[index]; index++)
+		join_str[concat_indeix++] = s2[index];
+	return (join_str);
 }
