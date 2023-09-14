@@ -19,7 +19,7 @@ void _printstr(va_list list)
 {
 	char *str;
 
-	s = va_arg(list, char *);
+	str = va_arg(list, char *);
 	if (str == NULL)
 		str = "(nil)";
 	printf("%s", str);
@@ -70,7 +70,7 @@ void print_all(const char * const format, ...)
 		{
 			printf("%s", spr);
 			storage[k].f(args);
-			sep = ", ";
+			spr = ", ";
 		}
 		j++;
 	}
