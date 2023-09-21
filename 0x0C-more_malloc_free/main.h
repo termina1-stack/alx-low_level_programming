@@ -1,5 +1,6 @@
 #ifndef _MAIN_H
 #define _MAIN_H
+#define ERR_MSG "Error"
 
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
